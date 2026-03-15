@@ -1,0 +1,12 @@
+View v;
+v = findViewById(R.id.v); 
+implements SensorEventListener
+
+SensorManager sm = (SensorManager) getSystemService(SENSOR_SERVICE);
+Sensor s = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+if (s != null) sm.registerListener(this, s, SensorManager.SENSOR_DELAY_UI);
+
+int r = (int)(Math.abs(e.values[0])*25);
+        int g = (int)(Math.abs(e.values[1])*25);
+        int b = (int)(Math.abs(e.values[2])*25);
+        v.setBackgroundColor(Color.rgb(r, g, b));
